@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-// taken from https://yourbasic.org/golang/fmt-printf-reference-cheat-sheet/
+// taken from https://yourbasic.org/golang/fmt-printf-reference-cheat-sheet/#cheat-sheet
 
 func main() {
 
