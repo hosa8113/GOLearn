@@ -30,6 +30,18 @@ func pow2(x, n, lim float64) float64 {
 	return lim
 }
 
+func pow3(x, n, lim float64) float64 {
+	if v := math.Pow(x, n); v < lim {
+		return v
+	} else if x > n {
+		fmt.Printf("%g >= %g\n", v, lim)
+	} else {
+
+	}
+	// can't use v here, though
+	return lim
+}
+
 func ifWithShortStatement() {
 	fmt.Println(
 		pow(3, 2, 10),

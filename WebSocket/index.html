@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>WebSocket</title>
+</head>
+
+<body>
+<div id="content">
+    <p id="data">
+
+    </p>
+    <p id="output"></p>
+</div>
+
+<script>
+    var loc = window.location;
+    var uri = 'ws:';
+
+    if (loc.protocol === 'https:') {
+        uri = 'wss:';
+    }
+    uri += '//' + loc.host;
+    uri += loc.pathname + 'ws';
+
+    uri = 'ws://localhost:8080/api/chat/connect'
+
+    let data = document.getElementById('data')
+    data.innerHTML += uri;
+
+    ws = new WebSocket(uri)
+
+    ws.onopen = function() {
+        console.log('Connected')
+    }
+
+    ws.onmessage = function(evt) {
+        var out = document.getElementById('output');
+        out.innerHTML += evt.data + '<br>';
+    }
+
+    setInterval(function() {
+        ws.send('Hello, Server!');
+    }, 1000);
+</script>
+</body>
+
+</html>

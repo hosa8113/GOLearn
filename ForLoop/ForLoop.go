@@ -8,6 +8,7 @@ func main() {
 	forLoopNoInitAndPostStatement()
 	doWhile()
 	forever()
+	forEachExample()
 
 }
 
@@ -42,4 +43,27 @@ func fullForLoop() {
 		sum += i
 	}
 	fmt.Printf("Sum=%v\n", sum)
+	for i := 0; i < 5; i++ {
+		// Runs 5 times, with values of step 0 through 4.
+		fmt.Println("{}", i)
+	}
+}
+
+func forEachExample() {
+	myList := []string{"dog", "cat", "hedgehog"}
+
+	// for {key}, {value} := range {list}
+	for index, animal := range myList {
+		fmt.Println("My animal is:", animal, index)
+	}
+
+	myList1 := map[string]string{
+		"dog":      "woof",
+		"cat":      "meow",
+		"hedgehog": "sniff",
+	}
+
+	for animal, noise := range myList1 {
+		fmt.Println("The", animal, "went", noise)
+	}
 }

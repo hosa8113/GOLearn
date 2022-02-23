@@ -1,0 +1,35 @@
+application:
+  #basePath: application-server home dir
+  baseUrl: golang.klf.ch
+
+logging:
+  level: debug
+  #logPath: log-dir relative to application-basePath
+
+server:
+  port: 8180
+  # basePath: /api
+  # catchAllEnabled: false
+  logRequest: true
+
+database:
+  host: localhost
+  #port: 3306
+  schema: klf_ch_auth
+  user: development_user
+  password: H@nn1bal
+  logQueries: true
+
+security:
+  jwt:
+    secret: c8bK9APsaSA346q3aga94wza
+
+mail:
+  smtp:
+    host: admin.yop.ch
+    user: noreply@klf.ch
+    password: n3!rO4i5
+    sender: noreply@klf.ch
+    # user: remember.ch@klf.ch
+    # password: 8#0xj9Ha
+    # sender: remember.ch@klf.ch
